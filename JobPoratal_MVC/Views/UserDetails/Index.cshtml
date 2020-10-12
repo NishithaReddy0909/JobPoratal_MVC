@@ -1,0 +1,18 @@
+﻿@model IEnumerable< JobPoratal_MVC.ViewModels.UserDetailsViewModel>
+@*@model IEnumerable< JobPoratal_MVC.ViewModels.UserDetailsViewModel>*@
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Display List of Users</h2>
+@foreach(var user in Model)
+{
+    <tr>
+        <th>First Name</th>
+    </tr>
+    <tr>
+       <td>@user.FirstName</td>
+    </tr>
+   
+}
+

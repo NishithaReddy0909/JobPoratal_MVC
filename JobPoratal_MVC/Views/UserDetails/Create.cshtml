@@ -1,0 +1,67 @@
+﻿@model JobPoratal_MVC.ViewModels.UserDetailsViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Adding New Users</h2>
+using (@Html.BeginForm())
+{
+<div class="row">
+    <div class="col-md-5">
+        <div class="form-group">
+            @Html.LabelFor(user=>user.FirstName)
+            @Html.TextBoxFor(user=>user.FirstName, new { @class="form-control",PlaceHolder= "Enter your FirstName" })
+            @Html.ValidationMessageFor(user=>user.FirstName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user=>user.LastName)
+            @Html.TextBoxFor(user=>user.LastName,new { @class="form-control",placeHolder="Enter your LastName"})
+            @Html.ValidationMessageFor(user=>user.LastName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user=>user.DateOfBirth)
+            @Html.TextBoxFor(user => user.DateOfBirth, new { @class="form-control",type="date"})
+            @Html.ValidationMessageFor(user=>user.DateOfBirth)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user=>user.Email)
+            @Html.TextBoxFor(user => user.Email, new { @class="form-control",placeHolder="abc@xyz.com"})
+            @Html.ValidationMessageFor(user=>user.Email)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user=>user.Gender)
+            @Html.RadioButtonFor(user=>user.Gender,"Male")
+            @Html.RadioButtonFor(user=>user.Gender,"Female")
+            @Html.RadioButtonFor(user=>user.Gender,"Others")
+            @Html.ValidationMessageFor(user=>user.Gender)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user=>user.MobileNumber)
+            @Html.TextBoxFor(user => user.MobileNumber, new { @class="form-control",placeholder="Enter 10 digit Mobile Number"})
+            @Html.ValidationMessageFor(user=>user.MobileNumber)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user=>user.Qualification)
+            @Html.DropDownListFor(user => user.Qualification,new SelectList(Model.Qualification,"Text","Value"),"--select--",new { @class = "form-control" })
+            @Html.ValidationMessageFor(user=>user.Qualification)
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user=>user.Address)
+            @Html.TextAreaFor(user=>user.Address,new { @class="form-control"})
+            @Html.ValidationMessageFor(user=>user.Address)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user=>user.Experience)
+            @Html.TextBoxFor(user=>user.Experience,new { @class="form-control"})
+            @Html.ValidationMessageFor(user=>user.Experience)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user=>user.AppliedDate)
+            @Html.TextBoxFor(user=>user.AppliedDate,new { @class="form-control",type="date"})
+            @Html.ValidationMessageFor(user=>user.AppliedDate)
+        </div>
+    </div>
+</div>
+}
+

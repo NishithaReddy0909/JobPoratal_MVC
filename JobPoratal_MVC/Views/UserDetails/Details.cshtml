@@ -1,0 +1,18 @@
+﻿@model JobPoratal_MVC.ViewModels.UserDetailsViewModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details of User</h2>
+@if (Model == null)
+{
+    <label style="color:red">The Id @Model.Id has no records, Please check your Id and retry again!!!!  </label>
+}
+<ol class="list-group">
+    <li class="list-group-item">@Model.DateOfBirth</li>
+    <li class="list-group-item">@Model.Address</li>
+    <li class="list-group-item">@Model.Email</li>
+    <li class="list-group-item">@Model.Experience</li>
+    <li class="list-group-item">@Model.UploadResume</li>
+</ol>
+
